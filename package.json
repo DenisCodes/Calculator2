@@ -18,6 +18,7 @@
     "csv-parse": "latest"
   },
   "devDependencies": {
+    "@babel/plugin-proposal-class-properties": "^7.12.13",
     "coveralls": "^3.1.0",
     "jest": "^25.5.4"
   }
