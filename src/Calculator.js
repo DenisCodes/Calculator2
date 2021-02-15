@@ -6,7 +6,6 @@ const Product = require('./Operations/Product');
 const Quotient = require('./Operations/Quotient');
 
 class Calculator {
-    static Calculations = []
     //Static methods can me called without instantiating and are good for actions
     static Sum(a,b) {
         //this is how you create a new object and this is good for data and actions
