@@ -6,7 +6,7 @@ const Product = require('./Operations/Product');
 const Quotient = require('./Operations/Quotient');
 
 class Calculator {
-    static Calculations = [];
+    static Calculations = []
     static Sum(a,b) {
         Calculator.Calculations.push(Calculation.Create(a,b,Sum));
         return calculation.GetResults();
