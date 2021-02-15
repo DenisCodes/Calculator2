@@ -1,0 +1,1 @@
+[![Coverage Status](https://coveralls.io/repos/github/DenisCodes/Calculator2/badge.svg?branch=master)](https://coveralls.io/github/DenisCodes/Calculator2?branch=master)
