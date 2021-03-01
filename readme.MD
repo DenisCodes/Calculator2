@@ -76,9 +76,9 @@ As far as prototyping is concerned for small projects it is basically just a cop
 statics parts in Calculator.js. I implemented it using the copy function bellow.
 ```
 Copy(){
-    let newCalc = new Calculator();
-    newCalc.Calculations = this.Calculations;
-    return newCalc;
+    let Calc2 = new Calculator();
+    Calc2.Calculations = this.Calculations;
+    return Calc2;
 }
 ```
 
