@@ -66,3 +66,90 @@ function to simplify the amount of calls. That way your code is easy and simple 
 
 Your code should be simple with simple implementation. Meaning that if someone wants to refactor part of your code it 
 should be very easy and hassle free.
+
+OOP Design Patterns:
+
+Creational patterns:
+
+Prototype:
+As far as prototyping is concerned for small projects it is basically just a copy. This allows for the removal of all 
+statics parts in Calculator.js. I implemented it using the copy function bellow.
+```
+Copy(){
+    let newCalc = new Calculator();
+    newCalc.Calculations = this.Calculations;
+    return newCalc;
+}
+```
+
+Structural patterns:
+
+Facade:
+The idea of simplifying code for the user by hiding all complex parts behind simple function calls. Bellow we see in our 
+test the only thing the user calls is Calculation(1,2,op).
+```
+test('Test Get results for Sum function', () => {
+    let op = Sum;
+    let calculation = new Calculation(1,2,op);
+    expect(calculation.GetResults()).toBe(3);
+});
+```
+Behind that one line the complex code bellow is hidden. 
+```
+class Calculation {
+    constructor(a, b, op) {
+        this.a = a;
+        this.b = b;
+        this.op = op;
+    }
+    GetResults() {
+        return this.op(this.a,this.b)
+    }
+}
+function Sum(a,b){
+    return a+b;
+}
+class Calculator {
+    static Calculations = []
+    static Sum(a,b) {
+        let calculation = new Calculation(a,b,Sum);
+        Calculator.Calculations.push(calculation);
+        return calculation.GetResults();
+    }
+```
+
+Behavioral Patterns:
+
+Strategy:
+The idea that instead opf having one function do all operation, you break up the operations and call the needed one. As 
+seen bellow in the calculation class, we have it set up so any operation can be used.
+
+```
+class Calculation {
+    constructor(a, b, op) {
+        this.a = a;
+        this.b = b;
+        this.op = op;
+    }
+    GetResults() {
+        return this.op(this.a,this.b)
+    }
+}
+```
+You can split up the operations to their own individual functions. As seen bellow, we broke sum out of the calculation 
+class.
+```
+function Sum(a,b){
+    return a+b;
+}
+```
+Bellow we put all the parts together to actually function.
+```
+class Calculator {
+    static Calculations = []
+    static Sum(a,b) {
+        let calculation = new Calculation(a,b,Sum);
+        Calculator.Calculations.push(calculation);
+        return calculation.GetResults();
+    }
+```
