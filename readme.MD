@@ -114,3 +114,50 @@ class Calculation {
     }
 }
 ```
+```
+class Calculation{
+    var Operation = function(){
+        this.op = '';
+    }
+    Operation.prototype = {
+        setStrat:function(op){
+            this.op = op;
+        }
+        calculate: function(a,b){
+            return this.op.calculate(a,b);
+        }
+    }
+    var Add = function(){
+        this.calculate = function(a,b){
+            return a+b;
+        }
+    }
+    var Sub = function(){
+        this.calculate = function(a,b){
+            return a-b;
+        }
+    }
+    var Multi = function(){
+        this.calculate = function(a,b){
+            return a*b;
+        }
+    }
+    var Div = function(){
+        this.calculate = function(a,b){
+            return a/b;
+        }
+    }
+    function strategy(a,b,op){
+        var add = new Add();
+        var sub = new Sub();
+        var multi = new Multi();
+        var div = new Div();
+        
+        var operation = new Operation();
+        
+        return operation.setStrat(op);
+    }
+}
+```
+
+
