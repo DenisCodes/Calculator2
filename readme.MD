@@ -86,43 +86,21 @@ Structural patterns:
 
 Facade:
 The idea of simplifying code for the user by hiding all complex parts behind simple function calls. Bellow we see in our 
-test the only thing the user calls is Calculation(1,2,op).
+test the only thing the user calls is product(1,2,). But the program calls all the other methods in the background out 
+of the user sight. Simplifying the program for the user
 ```
-test('Test Get results for Sum function', () => {
-    let op = Sum;
-    let calculation = new Calculation(1,2,op);
-    expect(calculation.GetResults()).toBe(3);
-});
-```
-Behind that one line the complex code bellow is hidden. 
-```
-class Calculation {
-    constructor(a, b, op) {
-        this.a = a;
-        this.b = b;
-        this.op = op;
-    }
-    GetResults() {
-        return this.op(this.a,this.b)
-    }
-}
-function Sum(a,b){
-    return a+b;
-}
-class Calculator {
-    static Calculations = []
-    static Sum(a,b) {
-        let calculation = new Calculation(a,b,Sum);
+Product(a,b) {
+        let calculation = new Calculation(a,b,Product);
         Calculator.Calculations.push(calculation);
         return calculation.GetResults();
-    }
 ```
 
 Behavioral Patterns:
 
 Strategy:
 The idea that instead opf having one function do all operation, you break up the operations and call the needed one. As 
-seen bellow in the calculation class, we have it set up so any operation can be used.
+seen bellow in the calculation class, we have it set up so any operation can be used. We basically make a generic model 
+for creation of functions. We have the user call a function that implements strategy that uses the function.
 
 ```
 class Calculation {
@@ -135,21 +113,4 @@ class Calculation {
         return this.op(this.a,this.b)
     }
 }
-```
-You can split up the operations to their own individual functions. As seen bellow, we broke sum out of the calculation 
-class.
-```
-function Sum(a,b){
-    return a+b;
-}
-```
-Bellow we put all the parts together to actually function.
-```
-class Calculator {
-    static Calculations = []
-    static Sum(a,b) {
-        let calculation = new Calculation(a,b,Sum);
-        Calculator.Calculations.push(calculation);
-        return calculation.GetResults();
-    }
 ```
