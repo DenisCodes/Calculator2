@@ -1,10 +1,10 @@
 const Calculation = require('../src/models/Calculation');
-const Sum = require('../src/Operations/Sum');
-const Difference = require('../src/Operations/Difference');
-const Product = require('../src/Operations/Product');
-const Quotient = require('../src/Operations/Quotient');
-const Square = require('../src/Operations/Square');
-const Root = require('../src/Operations/Root');
+const Sum = require('../src/Operations/Simple/Sum');
+const Difference = require('../src/Operations/Simple/Difference');
+const Product = require('../src/Operations/Simple/Product');
+const Quotient = require('../src/Operations/Stats/Quotient');
+const Square = require('../src/Operations/Simple/Square');
+const Root = require('../src/Operations/Simple/Root');
 
 test('Test of Calculation Instantiation', () => {
     let op = Sum
