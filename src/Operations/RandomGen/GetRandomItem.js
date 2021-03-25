@@ -1,6 +1,6 @@
-const sr = require("seedrandom");
+const seedrandom = require("seedrandom");
+const sr = seedrandom("seed");
 function GetRandomItem(list) {
-    var item = list[Math.floor(sr()*list.length)];
-    return item;
+    return list[Math.floor(sr()*list.length)];
 }
 module.exports = GetRandomItem;
