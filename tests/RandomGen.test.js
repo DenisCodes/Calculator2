@@ -1,6 +1,7 @@
 const GetRandomItem = require('../src/Operations/RandomGen/GetRandomItem.js')
 const SelectRandomly = require('../src/Operations/RandomGen/SelectRandomly.js')
 const GetRandomNumInRange = require('../src/Operations/RandomGen/GetRandomNumInRange.js')
+const GenerateRandomList = require('../src/Operations/RandomGen/GenerateRandomList.js')
 const expect = require('expect');
 
 test('GetRandomItem (unseeded) returns item from list', () => {
@@ -53,4 +54,11 @@ test('GetRandomNumInRange (seeded) returns same number', () => {
     let result1 = GetRandomNumInRange(min, max, seed);
     let result2 = GetRandomNumInRange(min, max, seed);
     expect(result1 == result2).toBe(true);
+});
+
+test('GenerateRandomList result contains correct amount of numbers', () => {
+    let amt = 5, min = 1, max = 50;
+    let seed = "hotel california";
+    let result = GenerateRandomList(amt, min, max, seed);
+    expect(result.length).toBe(5);
 });
