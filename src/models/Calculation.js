@@ -1,11 +1,10 @@
 class Calculation {
-    constructor(a, b, op) {
+    constructor(a, op) {
         this.a = a;
-        this.b = b;
         this.op = op;
     }
     GetResults() {
-        return this.op(this.a,this.b)
+        return this.op(this.a)
     }
 }
 module.exports = Calculation;

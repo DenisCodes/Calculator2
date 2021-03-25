@@ -2,7 +2,7 @@ const Calculation = require('../src/models/Calculation');
 const Sum = require('../src/Operations/Simple/Sum');
 const Difference = require('../src/Operations/Simple/Difference');
 const Product = require('../src/Operations/Simple/Product');
-const Quotient = require('../src/Operations/Stats/Quotient');
+const Quotient = require('../src/Operations/Simple/Quotient');
 const Square = require('../src/Operations/Simple/Square');
 const Root = require('../src/Operations/Simple/Root');
 
