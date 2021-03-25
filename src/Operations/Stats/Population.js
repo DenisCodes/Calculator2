@@ -1,6 +1,8 @@
 const Mean = require('./Man.js');
 const Standard = require('./Standard.js');
-function Population(a, b) {
+function Population(c) {
+    var a = c[0];
+    var b = c[1];
     var sum = 0;
 
     for(var i = 0; i < a.length; i++){

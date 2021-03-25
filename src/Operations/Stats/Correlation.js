@@ -1,4 +1,6 @@
-function Correlation(a, b) {
+function Correlation(c) {
+    var a = c[0];
+    var b = c[1];
     var ab = [];
     var a2 = [];
     var b2 = [];
