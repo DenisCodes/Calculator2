@@ -1,6 +1,9 @@
 const seedrandom = require("seedrandom");
-const sr = seedrandom("seed");
-function GetRandomItem(list) {
+
+function GetRandomItem(list, seed) {
+    let sr;
+    if(seed==undefined) sr = seedrandom();
+    else sr = seedrandom(seed);
     return list[Math.floor(sr()*list.length)];
 }
 module.exports = GetRandomItem;
