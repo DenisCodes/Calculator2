@@ -98,6 +98,22 @@ test('Calculator Zscore of a list', () => {
     let result = Calculator.Zscore(c);
     expect(result).toBe(0);
 });
+test('Calculator Cocharn of a list', () => {
+    let c = [[1,2,3,4,5,6,7,8,9],5];
+    let result = Calculator.Cocharn(c);
+    expect(result).toBe(false);
+});
+test('Calculator MarginError of a list', () => {
+    let c = [[1,2,3,4,5,6,7,8,9],5];
+    let result = Calculator.MarginError(c);
+    expect(result).toBe(0);
+});
+test('Calculator ConfiInterval of a list', () => {
+    let c = [[1,2,3,4,5,6,7,8,9],5];
+    let result = Calculator.ConfiInterval(c);
+    expect(result[0]).toBe(-4.682458365518542);
+    expect(result[1]).toBe(14.682458365518542);
+});
 test('Check Empty', () => {
     let c = [];
     let result = Calculator.Zscore(c);

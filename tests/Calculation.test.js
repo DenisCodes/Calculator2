@@ -20,6 +20,9 @@ const Variance = require('../src/Operations/Stats/Variance');
 const Zscore = require('../src/Operations/Stats/Zscore');
 const Empty = require('../src/Operations/Checks/Empty');
 const String = require('../src/Operations/Checks/String');
+const Cocharn = require('../src/Operations/Population/Cocharn');
+const MarginError = require('../src/Operations/Population/MarginError');
+const ConfiInterval = require('../src/Operations/Population/ConfiInterval');
 
 test('Test of Calculation Instantiation', () => {
     let op = Sum
@@ -140,6 +143,25 @@ test('Test Get results for Zscore function', () => {
     let c = [[1,2,3,4,5,6,7,8,9],5];
     let calculation = new Calculation(c,op);
     expect(calculation.GetResults()).toBe(0);
+});
+test('Test Get results for Cocharn function', () => {
+    let op = Cocharn;
+    let c = [[1,2,3,4,5,6,7,8,9],5];
+    let calculation = new Calculation(c,op);
+    expect(calculation.GetResults()).toBe(false);
+});
+test('Test Get results for MarginError function', () => {
+    let op = MarginError;
+    let c = [[1,2,3,4,5,6,7,8,9],5];
+    let calculation = new Calculation(c,op);
+    expect(calculation.GetResults()).toBe(0);
+});
+test('Test Get results for ConfiInterval function', () => {
+    let op = ConfiInterval;
+    let c = [[1,2,3,4,5,6,7,8,9],5];
+    let calculation = new Calculation(c,op);
+    expect(calculation.GetResults()[0]).toBe(-4.682458365518542);
+    expect(calculation.GetResults()[1]).toBe(14.682458365518542);
 });
 test('Test Get results for Empty function', () => {
     let c = [];

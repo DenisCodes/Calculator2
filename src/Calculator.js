@@ -20,6 +20,9 @@ const Variance = require('./Operations/Stats/Variance');
 const Zscore = require('./Operations/Stats/Zscore');
 const Empty = require('./Operations/Checks/Empty');
 const String = require('./Operations/Checks/String');
+const Cocharn = require('./Operations/Population/Cocharn');
+const MarginError = require('./Operations/Population/MarginError');
+const ConfiInterval = require('./Operations/Population/ConfiInterval');
 
 
 class Calculator {
@@ -222,6 +225,17 @@ class Calculator {
         Calculator.Calculations.push(calculation);
         return calculation.GetResults();
     }
+    static Cocharn(c) {
+        if(!Empty(c)){
+            return false;
+        }
+        if(!String(c)){
+            return false;
+        }
+        let calculation = new Calculation(c,Cocharn);
+        Calculator.Calculations.push(calculation);
+        return calculation.GetResults();
+    }
     static Zscore(c) {
         if(!Empty(c)){
             return false;
@@ -230,6 +244,28 @@ class Calculator {
             return false;
         }
         let calculation = new Calculation(c,Zscore);
+        Calculator.Calculations.push(calculation);
+        return calculation.GetResults();
+    }
+    static MarginError(c) {
+        if(!Empty(c)){
+            return false;
+        }
+        if(!String(c)){
+            return false;
+        }
+        let calculation = new Calculation(c,MarginError);
+        Calculator.Calculations.push(calculation);
+        return calculation.GetResults();
+    }
+    static ConfiInterval(c) {
+        if(!Empty(c)){
+            return false;
+        }
+        if(!String(c)){
+            return false;
+        }
+        let calculation = new Calculation(c,ConfiInterval);
         Calculator.Calculations.push(calculation);
         return calculation.GetResults();
     }
