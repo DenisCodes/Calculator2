@@ -18,6 +18,8 @@ const Standard = require('../src/Operations/Stats/Standard');
 const Total = require('../src/Operations/Stats/Total');
 const Variance = require('../src/Operations/Stats/Variance');
 const Zscore = require('../src/Operations/Stats/Zscore');
+const Empty = require('../src/Operations/Checks/Empty');
+const String = require('../src/Operations/Checks/String');
 
 test('Test of Calculation Instantiation', () => {
     let op = Sum
@@ -138,4 +140,20 @@ test('Test Get results for Zscore function', () => {
     let c = [[1,2,3,4,5,6,7,8,9],5];
     let calculation = new Calculation(c,op);
     expect(calculation.GetResults()).toBe(0);
+});
+test('Test Get results for Empty function', () => {
+    let c = [];
+    expect(Empty(c)).toBe(false);
+});
+test('Test Get results for String function', () => {
+    let c = 'String';
+    expect(String(c)).toBe(false);
+});
+test('Test Get results for Empty function', () => {
+    let c = 3;
+    expect(Empty(c)).toBe(true);
+});
+test('Test Get results for String function', () => {
+    let c = 3;
+    expect(String(c)).toBe(true);
 });

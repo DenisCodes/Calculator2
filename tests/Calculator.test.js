@@ -98,6 +98,16 @@ test('Calculator Zscore of a list', () => {
     let result = Calculator.Zscore(c);
     expect(result).toBe(0);
 });
+test('Check Empty', () => {
+    let c = [];
+    let result = Calculator.Zscore(c);
+    expect(result).toBe(false);
+});
+test('Check String', () => {
+    let c = ['check'];
+    let result = Calculator.Zscore(c);
+    expect(result).toBe(false);
+});
 test('Calculator adding to calculations', () => {
     let c = [1,2];
     let result = Calculator.Quotient(c);

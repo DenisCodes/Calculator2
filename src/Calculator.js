@@ -18,101 +18,217 @@ const Standard = require('./Operations/Stats/Standard');
 const Total = require('./Operations/Stats/Total');
 const Variance = require('./Operations/Stats/Variance');
 const Zscore = require('./Operations/Stats/Zscore');
+const Empty = require('./Operations/Checks/Empty');
+const String = require('./Operations/Checks/String');
 
 
 class Calculator {
     static Calculations = []
     static Sum(c) {
+        if(!Empty(c)){
+            return false;
+        }
+        if(!String(c)){
+            return false;
+        }
         let calculation = new Calculation(c,Sum);
         Calculator.Calculations.push(calculation);
         return calculation.GetResults();
     }
     static Difference(c) {
+        if(!Empty(c)){
+            return false;
+        }
+        if(!String(c)){
+            return false;
+        }
         let calculation = new Calculation(c,Difference);
         Calculator.Calculations.push(calculation);
         return calculation.GetResults();
     }
     static Product(c) {
+        if(!Empty(c)){
+            return false;
+        }
+        if(!String(c)){
+            return false;
+        }
         let calculation = new Calculation(c,Product);
         Calculator.Calculations.push(calculation);
         return calculation.GetResults();
     }
     static Quotient(c) {
+        if(!Empty(c)){
+            return false;
+        }
+        if(!String(c)){
+            return false;
+        }
         let calculation = new Calculation(c,Quotient);
         Calculator.Calculations.push(calculation);
         return calculation.GetResults();
     }
     static Square(c) {
+        if(!Empty(c)){
+            return false;
+        }
+        if(!String(c)){
+            return false;
+        }
         let calculation = new Calculation(c,Square);
         Calculator.Calculations.push(calculation);
         return calculation.GetResults();
     }
     static Root(c) {
+        if(!Empty(c)){
+            return false;
+        }
+        if(!String(c)){
+            return false;
+        }
         let calculation = new Calculation(c,Root);
         Calculator.Calculations.push(calculation);
         return calculation.GetResults();
     }
     static Correlation(c) {
+        if(!Empty(c)){
+            return false;
+        }
+        if(!String(c)){
+            return false;
+        }
         let calculation = new Calculation(c,Correlation);
         Calculator.Calculations.push(calculation);
         return calculation.GetResults();
     }
     static Deviation(c) {
+        if(!Empty(c)){
+            return false;
+        }
+        if(!String(c)){
+            return false;
+        }
         let calculation = new Calculation(c,Deviation);
         Calculator.Calculations.push(calculation);
         return calculation.GetResults();
     }
     static Mean(c) {
+        if(!Empty(c)){
+            return false;
+        }
+        if(!String(c)){
+            return false;
+        }
         let calculation = new Calculation(c,Mean);
         Calculator.Calculations.push(calculation);
         return calculation.GetResults();
     }
     static Median(c) {
+        if(!Empty(c)){
+            return false;
+        }
+        if(!String(c)){
+            return false;
+        }
         let calculation = new Calculation(c,Median);
         Calculator.Calculations.push(calculation);
         return calculation.GetResults();
     }
     static Mode(c) {
+        if(!Empty(c)){
+            return false;
+        }
+        if(!String(c)){
+            return false;
+        }
         let calculation = new Calculation(c,Mode);
         Calculator.Calculations.push(calculation);
         return calculation.GetResults();
     }
     static Population(c) {
+        if(!Empty(c)){
+            return false;
+        }
+        if(!String(c)){
+            return false;
+        }
         let calculation = new Calculation(c,Population);
         Calculator.Calculations.push(calculation);
         return calculation.GetResults();
     }
     static Quartile1(c) {
+        if(!Empty(c)){
+            return false;
+        }
+        if(!String(c)){
+            return false;
+        }
         let calculation = new Calculation(c,Quartile1);
         Calculator.Calculations.push(calculation);
         return calculation.GetResults();
     }
     static Quartile3(c) {
+        if(!Empty(c)){
+            return false;
+        }
+        if(!String(c)){
+            return false;
+        }
         let calculation = new Calculation(c,Quartile3);
         Calculator.Calculations.push(calculation);
         return calculation.GetResults();
     }
     static Skewness(c) {
+        if(!Empty(c)){
+            return false;
+        }
+        if(!String(c)){
+            return false;
+        }
         let calculation = new Calculation(c,Skewness);
         Calculator.Calculations.push(calculation);
         return calculation.GetResults();
     }
     static Standard(c) {
+        if(!Empty(c)){
+            return false;
+        }
+        if(!String(c)){
+            return false;
+        }
         let calculation = new Calculation(c,Standard);
         Calculator.Calculations.push(calculation);
         return calculation.GetResults();
     }
     static Total(c) {
+        if(!Empty(c)){
+            return false;
+        }
+        if(!String(c)){
+            return false;
+        }
         let calculation = new Calculation(c,Total);
         Calculator.Calculations.push(calculation);
         return calculation.GetResults();
     }
     static Variance(c) {
+        if(!Empty(c)){
+            return false;
+        }
+        if(!String(c)){
+            return false;
+        }
         let calculation = new Calculation(c,Variance);
         Calculator.Calculations.push(calculation);
         return calculation.GetResults();
     }
     static Zscore(c) {
+        if(!Empty(c)){
+            return false;
+        }
+        if(!String(c)){
+            return false;
+        }
         let calculation = new Calculation(c,Zscore);
         Calculator.Calculations.push(calculation);
         return calculation.GetResults();
