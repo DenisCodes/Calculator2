@@ -6,6 +6,7 @@ const Quotient = require('../src/Operations/Simple/Quotient');
 const Square = require('../src/Operations/Simple/Square');
 const Root = require('../src/Operations/Simple/Root');
 const Correlation = require('../src/Operations/Stats/Correlation');
+const Deviation = require('../src/Operations/Stats/Deviation');
 const Mean = require('../src/Operations/Stats/Man');
 const Median = require('../src/Operations/Stats/Median');
 const Mode = require('../src/Operations/Stats/Mode');
@@ -65,6 +66,12 @@ test('Test Get results for Correlation function', () => {
     let c = [[1,2,3,4,5,6,7,8,9],[2,3,4,5,6,7,8,9,10]];
     let calculation = new Calculation(c,op);
     expect(calculation.GetResults()).toBe(1);
+});
+test('Test Get results for Deviation function', () => {
+    let op = Deviation;
+    let c = [1,2,3,4,5,6,7,8,9];
+    let calculation = new Calculation(c,op);
+    expect(calculation.GetResults()).toBe(2.2222222222222223);
 });
 test('Test Get results for Mean function', () => {
     let op = Mean;

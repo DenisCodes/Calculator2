@@ -33,6 +33,11 @@ test('Calculator Correlation of a list', () => {
     let result = Calculator.Correlation(c);
     expect(result).toBe(1);
 });
+test('Calculator Deviation of a list', () => {
+    let c = [1,2,3,4,5,6,7,8,9];
+    let result = Calculator.Deviation(c);
+    expect(result).toBe(2.2222222222222223);
+});
 test('Calculator Mean of list', () => {
     let c = [1,2,3,4];
     let result = Calculator.Mean(c);
