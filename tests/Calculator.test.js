@@ -133,10 +133,9 @@ test('Calculator adding to calculations', () => {
     });
 });
 test('Calculator RandSample', () => {
-   let population = ["apple", "banana", "coconut", "strawberry", "pineapple"];
-   let samplesize = 3;
-   let c = [samplesize, population];
-   console.log(Calculator.RandSample(c));
-   console.log(Calculator.RandSample(c));
-   console.log(Calculator.RandSample(c));
+    let samplesize = 3;
+    let population = ["apple", "banana", "coconut", "strawberry", "pineapple"];
+    console.log(Calculator.RandSample(samplesize, population));
+    console.log(Calculator.RandSample(samplesize, population));
+    console.log(Calculator.RandSample(samplesize, population));
 });
