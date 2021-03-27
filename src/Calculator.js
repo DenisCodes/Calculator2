@@ -270,7 +270,8 @@ class Calculator {
         Calculator.Calculations.push(calculation);
         return calculation.GetResults();
     }
-    static RandSample(c) {
+    static RandSample(samplesize, population) {
+        let c = [samplesize, population]
         if(!Empty(c)){
             return false;
         }
