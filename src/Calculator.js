@@ -1,10 +1,15 @@
+// Calculation Model
 const Calculation = require('./models/Calculation');
+
+// Simple Ops
 const Sum = require('./Operations/Simple/Sum');
 const Difference = require('./Operations/Simple/Difference');
 const Product = require('./Operations/Simple/Product');
 const Quotient = require('./Operations/Simple/Quotient');
 const Square = require('./Operations/Simple/Square');
 const Root = require('./Operations/Simple/Root');
+
+// Stats Ops
 const Correlation = require('./Operations/Stats/Correlation');
 const Deviation = require('./Operations/Stats/Deviation');
 const Mean = require('./Operations/Stats/Man');
@@ -20,12 +25,21 @@ const Variance = require('./Operations/Stats/Variance');
 const Zscore = require('./Operations/Stats/Zscore');
 const Empty = require('./Operations/Checks/Empty');
 const String = require('./Operations/Checks/String');
+
+// RandomGen Ops
+const SelectRandomly = require('./Operations/RandomGen/SelectRandomly');
+const GetRandomItem = require('./Operations/RandomGen/GetRandomItem');
+const GetRandomNumInRange = require('./Operations/RandomGen/GetRandomNumInRange');
+const GenerateRandomList = require('./Operations/RandomGen/GenerateRandomList');
+
+// Population Ops
 const Cocharn = require('./Operations/Population/Cocharn');
 const MarginError = require('./Operations/Population/MarginError');
 const ConfiInterval = require('./Operations/Population/ConfiInterval');
-
-const SelectRandomly = require('./Operations/RandomGen/SelectRandomly');
 const RandSample = require('./Operations/Population/RandSample');
+const SampleSize = require('./Operations/Population/SampleSize');
+const SampleSizePop = require('./Operations/Population/SampleSizePop');
+const SystSample = require('./Operations/Population/SystSample');
 
 
 class Calculator {
@@ -283,6 +297,7 @@ class Calculator {
         Calculator.Calculations.push(calculation);
         return calculation.GetResults();
     }
+
 
     static RandSample(samplesize, population){
         let c = [samplesize, population]
