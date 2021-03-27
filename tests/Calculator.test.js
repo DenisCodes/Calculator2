@@ -132,3 +132,11 @@ test('Calculator adding to calculations', () => {
         console.log(calc.GetResults())
     });
 });
+test('Calculator RandSample', () => {
+   let population = ["apple", "banana", "coconut", "strawberry", "pineapple"];
+   let samplesize = 3;
+   let c = [samplesize, population];
+   console.log(Calculator.RandSample(c));
+   console.log(Calculator.RandSample(c));
+   console.log(Calculator.RandSample(c));
+});
