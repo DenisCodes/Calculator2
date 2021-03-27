@@ -23,6 +23,8 @@ const String = require('./Operations/Checks/String');
 const Cocharn = require('./Operations/Population/Cocharn');
 const MarginError = require('./Operations/Population/MarginError');
 const ConfiInterval = require('./Operations/Population/ConfiInterval');
+
+const SelectRandomly = require('./Operations/RandomGen/SelectRandomly');
 const RandSample = require('./Operations/Population/RandSample');
 
 
@@ -270,7 +272,19 @@ class Calculator {
         Calculator.Calculations.push(calculation);
         return calculation.GetResults();
     }
-    static RandSample(samplesize, population) {
+
+    static SelectRandomly(amount, list, seed){
+        list = list.slice();
+        let c = [amount, list, seed];
+        if(!Empty(c)){
+            return false;
+        }
+        let calculation = new Calculation(c, SelectRandomly);
+        Calculator.Calculations.push(calculation);
+        return calculation.GetResults();
+    }
+
+    static RandSample(samplesize, population){
         let c = [samplesize, population]
         if(!Empty(c)){
             return false;
