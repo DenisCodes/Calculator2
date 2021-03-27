@@ -23,6 +23,7 @@ const String = require('./Operations/Checks/String');
 const Cocharn = require('./Operations/Population/Cocharn');
 const MarginError = require('./Operations/Population/MarginError');
 const ConfiInterval = require('./Operations/Population/ConfiInterval');
+const RandSample = require('./Operations/Population/RandSample');
 
 
 class Calculator {
@@ -266,6 +267,14 @@ class Calculator {
             return false;
         }
         let calculation = new Calculation(c,ConfiInterval);
+        Calculator.Calculations.push(calculation);
+        return calculation.GetResults();
+    }
+    static RandSample(c) {
+        if(!Empty(c)){
+            return false;
+        }
+        let calculation = new Calculation(c,RandSample);
         Calculator.Calculations.push(calculation);
         return calculation.GetResults();
     }
