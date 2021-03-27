@@ -5,6 +5,7 @@ const Product = require('../src/Operations/Simple/Product');
 const Quotient = require('../src/Operations/Simple/Quotient');
 const Square = require('../src/Operations/Simple/Square');
 const Root = require('../src/Operations/Simple/Root');
+const Correlation = require('../src/Operations/Stats/Correlation');
 const Mean = require('../src/Operations/Stats/Man');
 const Median = require('../src/Operations/Stats/Median');
 const Mode = require('../src/Operations/Stats/Mode');
@@ -59,6 +60,12 @@ test('Test Get results for Root function', () => {
     let calculation = new Calculation(9,op);
     expect(calculation.GetResults()).toBe(3);
 });
+test('Test Get results for Correlation function', () => {
+    let op = Correlation;
+    let c = [[1,2,3,4,5,6,7,8,9],[2,3,4,5,6,7,8,9,10]];
+    let calculation = new Calculation(c,op);
+    expect(calculation.GetResults()).toBe(1);
+});
 test('Test Get results for Mean function', () => {
     let op = Mean;
     let c = [1,2,3,4];
@@ -75,7 +82,7 @@ test('Test Get results for Mode function', () => {
     let op = Mode;
     let c = [1,2,2,3];
     let calculation = new Calculation(c,op);
-    expect(calculation.GetResults()[0]).toBe(ans);
+    expect(calculation.GetResults()[0]).toBe(2);
 });
 test('Test Get results for Population function', () => {
     let op = Population;
@@ -105,7 +112,7 @@ test('Test Get results for Standard function', () => {
     let op = Standard;
     let c = [1,2,3,4,5,6,7,8,9];
     let calculation = new Calculation(c,op);
-    expect(calculation.GetResults()).toBe(2.5819888974716);
+    expect(calculation.GetResults()).toBe(2.7386127875258306);
 });
 test('Test Get results for Total function', () => {
     let op = Total;
@@ -123,5 +130,5 @@ test('Test Get results for Zscore function', () => {
     let op = Zscore;
     let c = [[1,2,3,4,5,6,7,8,9],5];
     let calculation = new Calculation(c,op);
-    expect(calculation.GetResults()).toBe(.5);
+    expect(calculation.GetResults()).toBe(0);
 });

@@ -5,6 +5,7 @@ const Product = require('./Operations/Simple/Product');
 const Quotient = require('./Operations/Simple/Quotient');
 const Square = require('./Operations/Simple/Square');
 const Root = require('./Operations/Simple/Root');
+const Correlation = require('./Operations/Stats/Correlation');
 const Mean = require('./Operations/Stats/Man');
 const Median = require('./Operations/Stats/Median');
 const Mode = require('./Operations/Stats/Mode');
@@ -47,6 +48,11 @@ class Calculator {
     }
     static Root(c) {
         let calculation = new Calculation(c,Root);
+        Calculator.Calculations.push(calculation);
+        return calculation.GetResults();
+    }
+    static Correlation(c) {
+        let calculation = new Calculation(c,Correlation);
         Calculator.Calculations.push(calculation);
         return calculation.GetResults();
     }

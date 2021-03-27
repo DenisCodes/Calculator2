@@ -28,6 +28,11 @@ test('Calculator root of a list', () => {
     let result = Calculator.Root(9);
     expect(result).toBe(3);
 });
+test('Calculator Correlation of a list', () => {
+    let c = [[1,2,3,4,5,6,7,8,9],[2,3,4,5,6,7,8,9,10]];
+    let result = Calculator.Correlation(c);
+    expect(result).toBe(1);
+});
 test('Calculator Mean of list', () => {
     let c = [1,2,3,4];
     let result = Calculator.Mean(c);
@@ -71,7 +76,7 @@ test('Calculator Skewness of a list', () => {
 test('Calculator Standard of a list', () => {
     let c = [1,2,3,4,5,6,7,8,9];
     let result = Calculator.Standard(c);
-    expect(result).toBe(2.5819888974716);
+    expect(result).toBe(2.7386127875258306);
 });
 test('Calculator Total of a list', () => {
     let c = [1,2,3,4,5];
@@ -86,7 +91,7 @@ test('Calculator Variance of a list', () => {
 test('Calculator Zscore of a list', () => {
     let c = [[1,2,3,4,5,6,7,8,9],5];
     let result = Calculator.Zscore(c);
-    expect(result).toBe(.5);
+    expect(result).toBe(0);
 });
 test('Calculator adding to calculations', () => {
     let c = [1,2];
