@@ -1,5 +1,15 @@
 const Calculator = require('../src/Calculator');
 
+test('Calculator adding to calculations', () => {
+    let c = [1,2];
+    let result = Calculator.Quotient(c);
+    let calculations = Calculator.Calculations
+    calculations.forEach(function (calc) {
+        console.log(calc.GetResults())
+    });
+});
+
+// General Math Operations
 test('Calculator adding a list', () => {
     let c = [1,2];
     let result = Calculator.Sum(c);
@@ -28,6 +38,8 @@ test('Calculator root of a list', () => {
     let result = Calculator.Root(9);
     expect(result).toBe(3);
 });
+
+// Descriptive Statistics Functions
 test('Calculator Correlation of a list', () => {
     let c = [[1,2,3,4,5,6,7,8,9],[2,3,4,5,6,7,8,9,10]];
     let result = Calculator.Correlation(c);
@@ -98,6 +110,11 @@ test('Calculator Zscore of a list', () => {
     let result = Calculator.Zscore(c);
     expect(result).toBe(0);
 });
+
+// Random Generator Functions
+
+
+// Population Statistics Functions
 test('Calculator Cochran of a list', () => {
     let c = [[1,2,3,4,5,6,7,8,9],5];
     let result = Calculator.Cochran(c);
@@ -114,26 +131,6 @@ test('Calculator ConfiInterval of a list', () => {
     expect(result[0]).toBe(-4.682458365518542);
     expect(result[1]).toBe(14.682458365518542);
 });
-test('Check Empty', () => {
-    let c = [];
-    let result = Calculator.Zscore(c);
-    expect(result).toBe(false);
-});
-test('Check String', () => {
-    let c = ['check'];
-    let result = Calculator.Zscore(c);
-    expect(result).toBe(false);
-});
-
-test('Calculator adding to calculations', () => {
-    let c = [1,2];
-    let result = Calculator.Quotient(c);
-    let calculations = Calculator.Calculations
-    calculations.forEach(function (calc) {
-        console.log(calc.GetResults())
-    });
-});
-
 test('Calculator RandSample', () => {
     let samplesize = 3;
     let population = ["apple", "banana", "coconut", "strawberry", "pineapple"];
@@ -161,4 +158,15 @@ test('Calculator Sample Size (known population std dev)', () => {
     let errorMargin = 0.5;
     let standardDeviation = 2.9;
     expect(Math.round(Calculator.SampleSizePop(confidenceInterval, errorMargin, standardDeviation))).toBe(224);
+});
+
+test('Check Empty', () => {
+    let c = [];
+    let result = Calculator.Zscore(c);
+    expect(result).toBe(false);
+});
+test('Check String', () => {
+    let c = ['check'];
+    let result = Calculator.Zscore(c);
+    expect(result).toBe(false);
 });
