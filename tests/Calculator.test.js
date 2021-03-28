@@ -124,6 +124,7 @@ test('Check String', () => {
     let result = Calculator.Zscore(c);
     expect(result).toBe(false);
 });
+
 test('Calculator adding to calculations', () => {
     let c = [1,2];
     let result = Calculator.Quotient(c);
@@ -132,10 +133,20 @@ test('Calculator adding to calculations', () => {
         console.log(calc.GetResults())
     });
 });
+
 test('Calculator RandSample', () => {
     let samplesize = 3;
     let population = ["apple", "banana", "coconut", "strawberry", "pineapple"];
     console.log(Calculator.RandSample(samplesize, population));
     console.log(Calculator.RandSample(samplesize, population));
     console.log(Calculator.RandSample(samplesize, population));
+});
+test('Calculator Systematic Sample', () => {
+    let samplesize = 8;
+    let population = [];
+    for(let i = 11; i <= 130; i++)
+    {
+        population.push(i);
+    }
+    expect(Calculator.SystSample(samplesize, population)).toStrictEqual([11, 26, 41, 56, 71, 86, 101, 116]);
 });
