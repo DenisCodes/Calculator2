@@ -300,9 +300,6 @@ class Calculator {
     static GetRandomItem(list, seed){
         list = list.slice();
         let c = [list, seed];
-        if(!Empty(c)){
-            return false;
-        }
         let calculation = new Calculation(c, GetRandomItem);
         Calculator.Calculations.push(calculation);
         return calculation.GetResults();
