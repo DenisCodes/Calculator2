@@ -297,7 +297,34 @@ class Calculator {
         Calculator.Calculations.push(calculation);
         return calculation.GetResults();
     }
-
+    static GetRandomItem(list, seed){
+        list = list.slice();
+        let c = [list, seed];
+        if(!Empty(c)){
+            return false;
+        }
+        let calculation = new Calculation(c, GetRandomItem);
+        Calculator.Calculations.push(calculation);
+        return calculation.GetResults();
+    }
+    static GetRandomNumInRange(min, max, seed){
+        let c = [min, max, seed];
+        if(!Empty(c)){
+            return false;
+        }
+        let calculation = new Calculation(c, GetRandomNumInRange);
+        Calculator.Calculations.push(calculation);
+        return calculation.GetResults();
+    }
+    static GenerateRandomList(amount, min, max, seed){
+        let c = [amount, min, max, seed];
+        if(!Empty(c)){
+            return false;
+        }
+        let calculation = new Calculation(c, GenerateRandomList);
+        Calculator.Calculations.push(calculation);
+        return calculation.GetResults();
+    }
 
     static RandSample(samplesize, population){
         let c = [samplesize, population]
