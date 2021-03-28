@@ -335,6 +335,15 @@ class Calculator {
         Calculator.Calculations.push(calculation);
         return calculation.GetResults();
     }
+    static SystSample(samplesize, population){
+        let c = [samplesize, population]
+        if(!Empty(c)){
+            return false;
+        }
+        let calculation = new Calculation(c,SystSample);
+        Calculator.Calculations.push(calculation);
+        return calculation.GetResults();
+    }
 
 }
 module.exports = Calculator;
