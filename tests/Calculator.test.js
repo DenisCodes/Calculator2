@@ -154,8 +154,11 @@ test('Calculator Sample Size (unknown population std dev)', () => {
     let confidenceInterval = 0.95;
     let width = 0.06;
     let percentage = 0.41;
-    expect(Math.round(Calculator.SampleSize(0.95, 0.06, 0.41))).toBe(1033);
+    expect(Math.round(Calculator.SampleSize(confidenceInterval, width, percentage))).toBe(1033);
 });
 test('Calculator Sample Size (known population std dev)', () => {
-
+    let confidenceInterval = 0.99;
+    let errorMargin = 0.5;
+    let standardDeviation = 2.9;
+    expect(Math.round(Calculator.SampleSizePop(confidenceInterval, errorMargin, standardDeviation))).toBe(224);
 });
