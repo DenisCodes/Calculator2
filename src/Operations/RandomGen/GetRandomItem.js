@@ -1,6 +1,8 @@
 const seedrandom = require("seedrandom");
 
-function GetRandomItem(list, seed) {
+function GetRandomItem(c) {
+    let list = c[0];
+    let seed = c[1];
     let sr;
     if(seed==undefined) sr = seedrandom();
     else sr = seedrandom(seed);
