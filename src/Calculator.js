@@ -353,6 +353,15 @@ class Calculator {
         Calculator.Calculations.push(calculation);
         return calculation.GetResults();
     }
+    static SampleSizePop(confidenceInterval, errorMargin, standardDeviation){
+        let c = [confidenceInterval, errorMargin, standardDeviation];
+        if(!Empty(c)){
+            return false;
+        }
+        let calculation = new Calculation(c,SampleSizePop);
+        Calculator.Calculations.push(calculation);
+        return calculation.GetResults();
+    }
 
 }
 module.exports = Calculator;
