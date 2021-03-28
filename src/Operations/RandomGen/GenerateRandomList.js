@@ -1,6 +1,10 @@
 const seedrandom = require("seedrandom");
 
-function GenerateRandomList(amount, min, max, seed) {
+function GenerateRandomList(c) {
+    let amount = c[0];
+    let min = c[1];
+    let max = c[2];
+    let seed = c[3];
     let sr;
     if(seed==undefined) sr = seedrandom();
     else sr = seedrandom(seed);
