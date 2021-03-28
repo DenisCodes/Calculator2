@@ -344,6 +344,15 @@ class Calculator {
         Calculator.Calculations.push(calculation);
         return calculation.GetResults();
     }
+    static SampleSize(confidenceInterval, width, percentage){
+        let c = [confidenceInterval, width, percentage];
+        if(!Empty(c)){
+            return false;
+        }
+        let calculation = new Calculation(c,SampleSize);
+        Calculator.Calculations.push(calculation);
+        return calculation.GetResults();
+    }
 
 }
 module.exports = Calculator;
