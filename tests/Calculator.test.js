@@ -150,3 +150,12 @@ test('Calculator Systematic Sample', () => {
     }
     expect(Calculator.SystSample(samplesize, population)).toStrictEqual([11, 26, 41, 56, 71, 86, 101, 116]);
 });
+test('Calculator Sample Size (unknown population std dev)', () => {
+    let confidenceInterval = 0.95;
+    let width = 0.06;
+    let percentage = 0.41;
+    expect(Math.round(Calculator.SampleSize(0.95, 0.06, 0.41))).toBe(1033);
+});
+test('Calculator Sample Size (known population std dev)', () => {
+
+});
