@@ -98,9 +98,9 @@ test('Calculator Zscore of a list', () => {
     let result = Calculator.Zscore(c);
     expect(result).toBe(0);
 });
-test('Calculator Cocharn of a list', () => {
+test('Calculator Cochran of a list', () => {
     let c = [[1,2,3,4,5,6,7,8,9],5];
-    let result = Calculator.Cocharn(c);
+    let result = Calculator.Cochran(c);
     expect(result).toBe(false);
 });
 test('Calculator MarginError of a list', () => {

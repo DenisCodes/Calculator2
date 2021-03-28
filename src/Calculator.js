@@ -33,7 +33,7 @@ const GetRandomNumInRange = require('./Operations/RandomGen/GetRandomNumInRange'
 const GenerateRandomList = require('./Operations/RandomGen/GenerateRandomList');
 
 // Population Ops
-const Cocharn = require('./Operations/Population/Cocharn');
+const Cochran = require('./Operations/Population/Cochran');
 const MarginError = require('./Operations/Population/MarginError');
 const ConfiInterval = require('./Operations/Population/ConfiInterval');
 const RandSample = require('./Operations/Population/RandSample');
@@ -242,14 +242,14 @@ class Calculator {
         Calculator.Calculations.push(calculation);
         return calculation.GetResults();
     }
-    static Cocharn(c) {
+    static Cochran(c) {
         if(!Empty(c)){
             return false;
         }
         if(!String(c)){
             return false;
         }
-        let calculation = new Calculation(c,Cocharn);
+        let calculation = new Calculation(c,Cochran);
         Calculator.Calculations.push(calculation);
         return calculation.GetResults();
     }
