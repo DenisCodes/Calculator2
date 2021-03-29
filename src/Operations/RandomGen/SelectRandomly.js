@@ -1,7 +1,9 @@
 const seedrandom = require("seedrandom");
 
-function SelectRandomly(amount, list, seed) {
-    list = list.slice();
+function SelectRandomly(c) {
+    let amount = c[0];
+    let list = c[1].slice();
+    let seed = c[2];
     let sr;
     if(seed==undefined) sr = seedrandom();
     else sr = seedrandom(seed);

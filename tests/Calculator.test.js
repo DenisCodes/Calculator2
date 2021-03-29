@@ -1,19 +1,23 @@
 const Calculator = require('../src/Calculator');
 
 test('Calculator adding a list', () => {
-    let result = Calculator.Sum(1,2);
+    let c = [1,2];
+    let result = Calculator.Sum(c);
     expect(result).toBe(3);
 });
 test('Calculator difference a list', () => {
-    let result = Calculator.Difference(1,2);
+    let c = [1,2];
+    let result = Calculator.Difference(c);
     expect(result).toBe(-1);
 });
 test('Calculator product of a list', () => {
-    let result = Calculator.Product(1,2);
+    let c = [1,2];
+    let result = Calculator.Product(c);
     expect(result).toBe(2);
 });
 test('Calculator quotient of a list', () => {
-    let result = Calculator.Quotient(1,2);
+    let c = [1,2];
+    let result = Calculator.Quotient(c);
     expect(result).toBe(.5);
 });
 test('Calculator square of a list', () => {
@@ -25,7 +29,8 @@ test('Calculator root of a list', () => {
     expect(result).toBe(3);
 });
 test('Calculator Correlation of a list', () => {
-    let result = Calculator.Correlation([1,2,3,4,5,6,7,8,9],[2,3,4,5,6,7,8,9,10]);
+    let c = [[1,2,3,4,5,6,7,8,9],[2,3,4,5,6,7,8,9,10]];
+    let result = Calculator.Correlation(c);
     expect(result).toBe(1);
 });
 test('Calculator Deviation of a list', () => {
@@ -54,7 +59,8 @@ test('Calculator Mode of a list', () => {
     expect(result[0]).toBe(2);
 });
 test('Calculator Population of a list', () => {
-    let result = Calculator.Population([1,2,3,4,5,6,7,8,9],[2,3,4,5,6,7,8,9,10]);
+    let c = [[1,2,3,4,5,6,7,8,9],[2,3,4,5,6,7,8,9,10]];
+    let result = Calculator.Population(c);
     expect(result).toBe(1);
 });
 test('Calculator Quartile1 of a list', () => {
@@ -88,19 +94,23 @@ test('Calculator Variance of a list', () => {
     expect(result).toBe(7.5);
 });
 test('Calculator Zscore of a list', () => {
-    let result = Calculator.Zscore([1,2,3,4,5,6,7,8,9],5);
+    let c = [[1,2,3,4,5,6,7,8,9],5];
+    let result = Calculator.Zscore(c);
     expect(result).toBe(0);
 });
 test('Calculator Cocharn of a list', () => {
-    let result = Calculator.Cocharn([1,2,3,4,5,6,7,8,9],5);
+    let c = [[1,2,3,4,5,6,7,8,9],5];
+    let result = Calculator.Cocharn(c);
     expect(result).toBe(false);
 });
 test('Calculator MarginError of a list', () => {
-    let result = Calculator.MarginError([1,2,3,4,5,6,7,8,9],5);
+    let c = [[1,2,3,4,5,6,7,8,9],5];
+    let result = Calculator.MarginError(c);
     expect(result).toBe(0);
 });
 test('Calculator ConfiInterval of a list', () => {
-    let result = Calculator.ConfiInterval([1,2,3,4,5,6,7,8,9],5);
+    let c = [[1,2,3,4,5,6,7,8,9],5];
+    let result = Calculator.ConfiInterval(c);
     expect(result[0]).toBe(-4.682458365518542);
     expect(result[1]).toBe(14.682458365518542);
 });

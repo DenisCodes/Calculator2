@@ -1,6 +1,6 @@
 const Zscore = require('../Stats/Zscore');
 const MarginError = require('./MarginError');
-function Cocharn(c){
+function Cochran(c){
     var z = Math.pow(Zscore(c),2);
     var e = Math.pow(MarginError(c),2);;
     var p = c[1];
@@ -12,4 +12,4 @@ function Cocharn(c){
     }
     return nom/e;
 }
-module.exports = Cocharn;
+module.exports = Cochran;

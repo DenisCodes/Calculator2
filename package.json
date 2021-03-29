@@ -16,6 +16,7 @@
   "dependencies": {
     "csv": "^5.3.2",
     "csv-parse": "^4.15.3",
+    "jstat": "^1.9.4",
     "seedrandom": "^3.0.5"
   },
   "devDependencies": {

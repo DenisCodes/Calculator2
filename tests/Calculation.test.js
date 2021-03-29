@@ -20,7 +20,7 @@ const Variance = require('../src/Operations/Stats/Variance');
 const Zscore = require('../src/Operations/Stats/Zscore');
 const Empty = require('../src/Operations/Checks/Empty');
 const String = require('../src/Operations/Checks/String');
-const Cocharn = require('../src/Operations/Population/Cocharn');
+const Cocharn = require('../src/Operations/Population/Cochran');
 const MarginError = require('../src/Operations/Population/MarginError');
 const ConfiInterval = require('../src/Operations/Population/ConfiInterval');
 

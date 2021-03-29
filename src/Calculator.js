@@ -27,8 +27,7 @@ const ConfiInterval = require('./Operations/Population/ConfiInterval');
 
 class Calculator {
     static Calculations = []
-    static Sum(a,b) {
-        var c = [a,b];
+    static Sum(c) {
         if(!Empty(c)){
             return false;
         }
@@ -39,8 +38,7 @@ class Calculator {
         Calculator.Calculations.push(calculation);
         return calculation.GetResults();
     }
-    static Difference(a,b) {
-        var c = [a,b];
+    static Difference(c) {
         if(!Empty(c)){
             return false;
         }
@@ -51,8 +49,7 @@ class Calculator {
         Calculator.Calculations.push(calculation);
         return calculation.GetResults();
     }
-    static Product(a,b) {
-        var c = [a,b];
+    static Product(c) {
         if(!Empty(c)){
             return false;
         }
@@ -63,8 +60,7 @@ class Calculator {
         Calculator.Calculations.push(calculation);
         return calculation.GetResults();
     }
-    static Quotient(a,b) {
-        var c = [a,b];
+    static Quotient(c) {
         if(!Empty(c)){
             return false;
         }
@@ -97,8 +93,7 @@ class Calculator {
         Calculator.Calculations.push(calculation);
         return calculation.GetResults();
     }
-    static Correlation(a,b) {
-        var c = [a,b];
+    static Correlation(c) {
         if(!Empty(c)){
             return false;
         }
@@ -153,8 +148,7 @@ class Calculator {
         Calculator.Calculations.push(calculation);
         return calculation.GetResults();
     }
-    static Population(a,b) {
-        var c = [a,b];
+    static Population(c) {
         if(!Empty(c)){
             return false;
         }
@@ -231,8 +225,7 @@ class Calculator {
         Calculator.Calculations.push(calculation);
         return calculation.GetResults();
     }
-    static Cocharn(a,b) {
-        var c = [a,b];
+    static Cocharn(c) {
         if(!Empty(c)){
             return false;
         }
@@ -243,8 +236,7 @@ class Calculator {
         Calculator.Calculations.push(calculation);
         return calculation.GetResults();
     }
-    static Zscore(a,b) {
-        var c = [a,b];
+    static Zscore(c) {
         if(!Empty(c)){
             return false;
         }
@@ -255,8 +247,7 @@ class Calculator {
         Calculator.Calculations.push(calculation);
         return calculation.GetResults();
     }
-    static MarginError(a,b) {
-        var c = [a,b];
+    static MarginError(c) {
         if(!Empty(c)){
             return false;
         }
@@ -267,8 +258,7 @@ class Calculator {
         Calculator.Calculations.push(calculation);
         return calculation.GetResults();
     }
-    static ConfiInterval(a,b) {
-        var c = [a,b];
+    static ConfiInterval(c) {
         if(!Empty(c)){
             return false;
         }
