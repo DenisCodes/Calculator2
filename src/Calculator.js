@@ -1,10 +1,15 @@
+// Calculation Model
 const Calculation = require('./models/Calculation');
+
+// Simple Ops
 const Sum = require('./Operations/Simple/Sum');
 const Difference = require('./Operations/Simple/Difference');
 const Product = require('./Operations/Simple/Product');
 const Quotient = require('./Operations/Simple/Quotient');
 const Square = require('./Operations/Simple/Square');
 const Root = require('./Operations/Simple/Root');
+
+// Stats Ops
 const Correlation = require('./Operations/Stats/Correlation');
 const Deviation = require('./Operations/Stats/Deviation');
 const Mean = require('./Operations/Stats/Man');
@@ -20,14 +25,27 @@ const Variance = require('./Operations/Stats/Variance');
 const Zscore = require('./Operations/Stats/Zscore');
 const Empty = require('./Operations/Checks/Empty');
 const String = require('./Operations/Checks/String');
-const Cocharn = require('./Operations/Population/Cocharn');
+
+// RandomGen Ops
+const SelectRandomly = require('./Operations/RandomGen/SelectRandomly');
+const GetRandomItem = require('./Operations/RandomGen/GetRandomItem');
+const GetRandomNumInRange = require('./Operations/RandomGen/GetRandomNumInRange');
+const GenerateRandomList = require('./Operations/RandomGen/GenerateRandomList');
+
+// Population Ops
+const Cochran = require('./Operations/Population/Cochran');
 const MarginError = require('./Operations/Population/MarginError');
 const ConfiInterval = require('./Operations/Population/ConfiInterval');
+const RandSample = require('./Operations/Population/RandSample');
+const SampleSize = require('./Operations/Population/SampleSize');
+const SampleSizePop = require('./Operations/Population/SampleSizePop');
+const SystSample = require('./Operations/Population/SystSample');
 
 
 class Calculator {
     static Calculations = []
-    static Sum(c) {
+    static Sum(a,b) {
+        var c = [a,b];
         if(!Empty(c)){
             return false;
         }
@@ -38,7 +56,8 @@ class Calculator {
         Calculator.Calculations.push(calculation);
         return calculation.GetResults();
     }
-    static Difference(c) {
+    static Difference(a,b) {
+        var c = [a,b];
         if(!Empty(c)){
             return false;
         }
@@ -49,7 +68,8 @@ class Calculator {
         Calculator.Calculations.push(calculation);
         return calculation.GetResults();
     }
-    static Product(c) {
+    static Product(a,b) {
+        var c = [a,b];
         if(!Empty(c)){
             return false;
         }
@@ -60,7 +80,8 @@ class Calculator {
         Calculator.Calculations.push(calculation);
         return calculation.GetResults();
     }
-    static Quotient(c) {
+    static Quotient(a,b) {
+        var c = [a,b];
         if(!Empty(c)){
             return false;
         }
@@ -93,7 +114,8 @@ class Calculator {
         Calculator.Calculations.push(calculation);
         return calculation.GetResults();
     }
-    static Correlation(c) {
+    static Correlation(a,b) {
+        var c = [a,b];
         if(!Empty(c)){
             return false;
         }
@@ -148,7 +170,8 @@ class Calculator {
         Calculator.Calculations.push(calculation);
         return calculation.GetResults();
     }
-    static Population(c) {
+    static Population(a,b) {
+        var c = [a,b];
         if(!Empty(c)){
             return false;
         }
@@ -225,18 +248,20 @@ class Calculator {
         Calculator.Calculations.push(calculation);
         return calculation.GetResults();
     }
-    static Cocharn(c) {
+    static Cocharn(a,b) {
+        var c = [a,b];
         if(!Empty(c)){
             return false;
         }
         if(!String(c)){
             return false;
         }
-        let calculation = new Calculation(c,Cocharn);
+        let calculation = new Calculation(c,Cochran);
         Calculator.Calculations.push(calculation);
         return calculation.GetResults();
     }
-    static Zscore(c) {
+    static Zscore(a,b) {
+        var c = [a,b];
         if(!Empty(c)){
             return false;
         }
@@ -247,7 +272,8 @@ class Calculator {
         Calculator.Calculations.push(calculation);
         return calculation.GetResults();
     }
-    static MarginError(c) {
+    static MarginError(a,b) {
+        var c = [a,b];
         if(!Empty(c)){
             return false;
         }
@@ -258,7 +284,8 @@ class Calculator {
         Calculator.Calculations.push(calculation);
         return calculation.GetResults();
     }
-    static ConfiInterval(c) {
+    static ConfiInterval(a,b) {
+        var c = [a,b];
         if(!Empty(c)){
             return false;
         }
@@ -266,6 +293,79 @@ class Calculator {
             return false;
         }
         let calculation = new Calculation(c,ConfiInterval);
+        Calculator.Calculations.push(calculation);
+        return calculation.GetResults();
+    }
+
+    static SelectRandomly(amount, list, seed){
+        list = list.slice();
+        let c = [amount, list, seed];
+        if(!Empty(c)){
+            return false;
+        }
+        let calculation = new Calculation(c, SelectRandomly);
+        Calculator.Calculations.push(calculation);
+        return calculation.GetResults();
+    }
+    static GetRandomItem(list, seed){
+        list = list.slice();
+        let c = [list, seed];
+        let calculation = new Calculation(c, GetRandomItem);
+        Calculator.Calculations.push(calculation);
+        return calculation.GetResults();
+    }
+    static GetRandomNumInRange(min, max, seed){
+        let c = [min, max, seed];
+        if(!Empty(c)){
+            return false;
+        }
+        let calculation = new Calculation(c, GetRandomNumInRange);
+        Calculator.Calculations.push(calculation);
+        return calculation.GetResults();
+    }
+    static GenerateRandomList(amount, min, max, seed){
+        let c = [amount, min, max, seed];
+        if(!Empty(c)){
+            return false;
+        }
+        let calculation = new Calculation(c, GenerateRandomList);
+        Calculator.Calculations.push(calculation);
+        return calculation.GetResults();
+    }
+
+    static RandSample(samplesize, population){
+        let c = [samplesize, population]
+        if(!Empty(c)){
+            return false;
+        }
+        let calculation = new Calculation(c,RandSample);
+        Calculator.Calculations.push(calculation);
+        return calculation.GetResults();
+    }
+    static SystSample(samplesize, population){
+        let c = [samplesize, population]
+        if(!Empty(c)){
+            return false;
+        }
+        let calculation = new Calculation(c,SystSample);
+        Calculator.Calculations.push(calculation);
+        return calculation.GetResults();
+    }
+    static SampleSize(confidenceInterval, width, percentage){
+        let c = [confidenceInterval, width, percentage];
+        if(!Empty(c)){
+            return false;
+        }
+        let calculation = new Calculation(c,SampleSize);
+        Calculator.Calculations.push(calculation);
+        return calculation.GetResults();
+    }
+    static SampleSizePop(confidenceInterval, errorMargin, standardDeviation){
+        let c = [confidenceInterval, errorMargin, standardDeviation];
+        if(!Empty(c)){
+            return false;
+        }
+        let calculation = new Calculation(c,SampleSizePop);
         Calculator.Calculations.push(calculation);
         return calculation.GetResults();
     }
