@@ -1,16 +1,17 @@
 [![Coverage Status](https://coveralls.io/repos/github/DenisCodes/Calculator2/badge.svg?branch=master)](https://coveralls.io/github/DenisCodes/Calculator2?branch=master)
 [![Build Status](https://travis-ci.com/DenisCodes/Calculator2.svg?branch=master)](https://travis-ci.com/DenisCodes/Calculator2)
 
-```
-Stats project breakdown:
-model, and basic functions - each did on our own then combined
-Tim & Denis
-stats functions - Denis
-random functions - Tim
-Cocharn, Confidence Interval, Margin of error, Empty check, String check - Denis
-Random Sample, Sample size, Sample size population, system sample - Tim
-```
+## Project Breakdown
+**Denis + Tim** : Model, basic functions
 
+**Denis** : helper/checking functions, unit tests, Descriptive Statistics functions, part of Population Statistics functions
+(Cochran, Confidence Interval, Margin of Error)
+
+**Tim** : code cleanup, unit tests, Random Gen functions, Population Statistics functions
+(Random Sampling, Systematic Sampling, Sample Population, Sample Population w/ known std. dev.)
+
+---
+</br>
 
 OOP (Object-Oriented Programming) is based on 4 pillars:
 
